@@ -101,9 +101,9 @@ button:hover
    <div class="div_2">
 
                 <form id="form_login" method="post" onsubmit="return entrar()">
-                        <b class="fonte">E-mail</b> <input class="area_inp" type="text" name="login">
+                        <b class="fonte">E-mail</b> <input class="area_inp" type="text" name="login" required >
                         <br><br><br><br>
-                        <b class="fonte">Senha</b>  <input class="area_inp" type="password" name="senha">
+                        <b class="fonte">Senha</b>  <input class="area_inp" type="password" name="senha" required>
                         <br><br>
                         
                         <button class="bt_entrar"  id="btn_entrar">Entrar</button>               
@@ -116,11 +116,11 @@ button:hover
      </div>
 </div>
 
-<img src="aguarde.gif" id="img_aguarde" style="display: none;">
+<!-- <img src="aguarde.gif" id="img_aguarde" style="display: none;"> -->
 
-<div id="div_erro">
+<!-- <div id="div_erro">
     Usuário e/ou senha inválidos!
-</div>
+</div> -->
 
 </body>
 
@@ -154,7 +154,7 @@ verificarAutenticacao();
                 });
             } else {
 
-                console.log('Erro de login!');
+                alert("E-mail ou Senha inválidos!");
                 finalizar_aguardar();
             }
         });
@@ -164,14 +164,14 @@ verificarAutenticacao();
 
     function aguardar() {
         btn_entrar.disabled = true;
-        img_aguarde.style.display='block';
-        div_erro.style.display='none';
+        // img_aguarde.style.display='block';
+        // div_erro.style.display='none';
     }
 
     function finalizar_aguardar() {
         btn_entrar.disabled = false;
-        img_aguarde.style.display='none';
-        div_erro.style.display='block';
+        // img_aguarde.style.display='none';
+        // div_erro.style.display='block';
     }
 
 
